@@ -1,13 +1,16 @@
-import warnings
 import numpy as np
-from utils.func.addText import addText
-from utils.func.makeCoords import coords
 
-class lineImg(object):
+from addText import TextOnScreen
+from makeCoords import coords
+
+
+class lineImg:
     def __init__(self):
         super(lineImg, self).__init__()
+        self.theCoords = coords()
+        self.theText = TextOnScreen()
 
-    def avg_line_img(image, lines):
+    def avg_line_img(self, image, lines):
         left_ln, right_ln, left_fit, right_fit = [], [], [], []
 
         try:
@@ -27,8 +30,8 @@ class lineImg(object):
                     else:
                         right_fit.append((slope, intercept))
 
-            left_fit_avg = np.average(left_fit, axis = 0)
-            right_fit_avg = np.average(right_fit, axis = 0)
+            left_fit_avg = np.average(left_fit, axis=0)
+            right_fit_avg = np.average(right_fit, axis=0)
 
             left_ln.append(left_fit_avg)
 
@@ -47,13 +50,17 @@ class lineImg(object):
             #     pass
 #             print("yesssssss",right_fit_avg)
 
-            left_line = coords.make_coordinates(image, left_fit_avg)
-            right_line = coords.make_coordinates(image, right_fit_avg)
+            left_line = self.theCoords.make_coordinates(image, left_fit_avg)
+            right_line = self.theCoords.make_coordinates(image, right_fit_avg)
 
             return np.array([left_line, right_line])
 
         except TypeError:
             print("typeError")
-            textOnVideo = addText.add_text(10, 50, "Keep Hands on Steering Wheel", image, 5, 1, 255, 0, 0, 255, 1)
-            textOnVideo = addText.add_text(10, 80, "Lane Detection Failed", image, 5, 1, 255, 0, 0, 255, 1)
+            textOnVideo = self.theText.add_text(
+                10, 50, "Keep Hands on Steering Wheel", image, 5,
+                1, 255, 0, 0, 255, 1)
+            textOnVideo = self.theText.add_text(
+                10, 80, "Lane Detection Failed", image, 5, 1, 255,
+                0, 0, 255, 1)
             return textOnVideo

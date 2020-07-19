@@ -1,13 +1,14 @@
-import numpy as np
 import cv2
+import numpy as np
 
-class roi(object):
+
+class roi:
     """docstring for roi."""
 
     def __init__(self):
         super(roi, self).__init__()
 
-    def roi(image):
+    def roi(self, image):
         height = image.shape[0]
         width = image.shape[1]
 #       print(width)

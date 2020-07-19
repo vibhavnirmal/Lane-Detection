@@ -1,16 +1,21 @@
-import warnings
-from utils.fromImage import fromImage
-from utils.fromVideo import fromVideo
+from selectoption import FromImage, FromVideo
 
-def main():
-    in1 = input("1)Image or 2)Video\n")
-    if int(in1) == 1:
-        fromImage.image()
-    elif int(in1) == 2:
-        fromVideo.video()
-    else:
-        print("Enter Valid Choice")
+
+class Main:
+    def __init__(self):
+        self.img = FromImage()
+        self.vid = FromVideo()
+
+    def main(self):
+        in1 = input("Press 1 for Image or 2 for Video\n")
+        if int(in1) == 1:
+            self.img.image()
+        elif int(in1) == 2:
+            self.vid.video()
+        else:
+            print("Enter Valid Choice")
 
 
 if __name__ == "__main__":
-    main()
+    runProg = Main()
+    runProg.main()
