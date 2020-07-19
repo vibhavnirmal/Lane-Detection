@@ -26,9 +26,8 @@ Python Package dependencies listed in [requirements.txt](requirements.txt)
 
 ### Contributions
 Feel free to fork this repository and contribute your code and ideas.
-Do not repost the code without permission.
 
 ### Maintainers
 * [@vibhavnirmal](https://github.com/vibhavnirmal)
 
-Follow the my blog at [vibhavnirmal.github.io](https://vibhavnirmal.github.io/) for updates on progress.
+Check [vibhavnirmal.github.io](https://vibhavnirmal.github.io/) for more updates.
