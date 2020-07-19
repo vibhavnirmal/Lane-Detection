@@ -1,4 +1,7 @@
 # Lane-Detection
+
+[![CodeFactor](https://www.codefactor.io/repository/github/vibhavnirmal/lane-detection/badge)](https://www.codefactor.io/repository/github/vibhavnirmal/lane-detection)
+
 Lane Detection using openCV
 
 ## Getting Started
